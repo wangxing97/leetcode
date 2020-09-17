@@ -56,6 +56,28 @@ public class Solution {
         l1.next = null;
         return node;
     }
+	/* 加强版
+	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode root = new ListNode(0);
+        ListNode temp = root;
+        // 两数之和
+        int sum = 0;
+        // 是否进位
+        int level = 0;
+        while(l1 != null || l2 != null || level != 0){
+            sum = l1 == null ? 0 : l1.val;
+            sum += l2 == null ? 0 : l2.val;
+            sum += level;
+            level = sum/10;
+            ListNode sumNode = new ListNode(sum % 10);
+            temp.next = sumNode;
+            temp = temp.next;
+            l1 = l1 == null ? null: l1.next;
+            l2 = l2 == null ? null: l2.next;
+        }
+        return root.next;
+    }
+	*/
     public static void main(String[] args) {
         Solution solution = new Solution();
         ListNode l1 = new ListNode(9);
